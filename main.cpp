@@ -2,7 +2,7 @@
 #include <vector>
 #include <list>
 #include <unordered_set>
-#include "ClassGraph.h"
+#include "IGraph.h"
 #include "CListGraph.h"
 #include "CMatrixGraph.h"
 #include "CSetGraph.h"
@@ -25,21 +25,21 @@ int main() {
     std::cout << "getNext: ";
     std::cin >> from;
     test.GetNextVertices(from, testArr);
-    for (int i = 0; i < testArr.size(); i++)
+    for (unsigned int i = 0; i < testArr.size(); i++)
         std::cout << testArr[i] << " ";
     testArr.clear();
 
     std::cout << "getPrev: ";
     std::cin >> to;
     test.GetPrevVertices(to, testArr);
-    for (int i = 0; i < testArr.size(); i++)
+    for (unsigned int i = 0; i < testArr.size(); i++)
         std::cout << testArr[i] << " ";
     testArr.clear();
 
     std::cout << "getNext: ";
     std::cin >> from;
     test2.GetNextVertices(from, testArr);
-    for (int i = 0; i < testArr.size(); i++)
+    for (unsigned int i = 0; i < testArr.size(); i++)
         std::cout << testArr[i] << " ";
     testArr.clear();
 

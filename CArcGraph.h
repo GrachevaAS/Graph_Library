@@ -1,7 +1,7 @@
 #ifndef H_ARCGRAPH
 #define H_ARCGRAPH
 
-#include "ClassGraph.h"
+#include "IGraph.h"
 
 struct Edge {
     Edge(int begin, int end) : from(begin), to(end) {}
@@ -21,6 +21,7 @@ public:
     void GetPrevVertices(int vertex, std::vector<int>& vertices) const;
 private:
     std::vector<Edge> edgesList;
+	int vertexCount;
 };
 
 #endif

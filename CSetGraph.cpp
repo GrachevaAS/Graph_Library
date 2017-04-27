@@ -1,6 +1,5 @@
 #include <vector>
 #include <unordered_set>
-#include <assert.h>
 #include "CSetGraph.h"
 
 CSetGraph::CSetGraph(int vertexNum) {
@@ -28,8 +27,11 @@ int CSetGraph::VerticesCount() const {
 	return vertexCount;
 }
 
+bool CSetGraph::HasEdge(int from, int to) {
+	return !(adjLists[from].find(to) == adjLists[from].end());
+}
+
 void CSetGraph::AddEdge(int from, int to) {
-	edgesCount++;
 	adjLists[from].insert(to);
 	adjListsReverse[to].insert(from);
 }

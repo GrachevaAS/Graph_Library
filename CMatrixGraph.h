@@ -1,7 +1,7 @@
 #ifndef H_CMATRIXGRAPH
 #define H_CMATRIXGRAPH
 
-#include "ClassGraph.h"
+#include "IGraph.h"
 
 class CMatrixGraph : public IGraph {
 public:
@@ -14,6 +14,7 @@ public:
     virtual void GetPrevVertices(int vertex, std::vector<int>& vertices) const;
 private:
     bool** Matrix;
+	int vertexCount;
 };
 
 #endif

@@ -1,7 +1,8 @@
 #ifndef H_CSETGRAPH
 #define H_CSETGRAPH
 
-#include "ClassGraph.h"
+#include "IGraph.h"
+#include <unordered_set>
 
 class CSetGraph : public IGraph {
 public:
@@ -10,11 +11,13 @@ public:
 	~CSetGraph();
 	int VerticesCount() const;
 	void AddEdge(int from, int to);
+	bool HasEdge(int from, int to);
 	void GetNextVertices(int vertex, std::vector<int>& vertices) const;
-	virtual void GetPrevVertices(int vertex, std::vector<int>& vertices) const;
+	void GetPrevVertices(int vertex, std::vector<int>& vertices) const;
 private:
-	std::unordered_set<int>*  adjLists;
+	std::unordered_set<int>* adjLists;
 	std::unordered_set<int>* adjListsReverse;
+	int vertexCount;
 };
 
 #endif

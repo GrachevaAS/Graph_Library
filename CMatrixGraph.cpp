@@ -21,7 +21,7 @@ CMatrixGraph::CMatrixGraph(const IGraph* graph): CMatrixGraph(graph->VerticesCou
     std::vector<int> temp;
     for (int i = 0; i < vertexCount; i++) {
         graph->GetNextVertices(i, temp);
-        for (int j = 0; j < temp.size(); j++) {
+        for (unsigned int j = 0; j < temp.size(); j++) {
             this->AddEdge(i, temp[j]);
         }
         temp.clear();
@@ -40,7 +40,6 @@ int CMatrixGraph::VerticesCount() const {
 
 void CMatrixGraph::AddEdge(int from, int to) {
     if (!Matrix[from][to]) {
-        edgesCount++;
         Matrix[from][to] = true;
     }
 }

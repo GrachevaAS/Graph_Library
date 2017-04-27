@@ -1,7 +1,7 @@
 #ifndef H_CLISTGRAPH
 #define H_CLISTGRAPH
 
-#include "ClassGraph.h"
+#include "IGraph.h"
 
 class CListGraph : public IGraph {
 public:
@@ -15,6 +15,7 @@ public:
 private:
 	std::list<int>* adjLists;
 	std::list<int>* adjListsReverse;
+	int vertexCount;
 };
 
 #endif

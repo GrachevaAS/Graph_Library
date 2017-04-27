@@ -1,5 +1,3 @@
-#include <vector>
-#include <assert.h>
 #include "CArcGraph.h"
 
 CArcGraph::CArcGraph(int vertexNum) {
@@ -14,7 +12,6 @@ CArcGraph::CArcGraph(const IGraph* graph) {
 		for (int j = 0; j < temp.size(); j++) {
 			Edge newEdge(i, temp[j]);
 			edgesList.push_back(newEdge);
-			edgesCount++;
 		}
 		temp.clear();
 	}
@@ -28,7 +25,6 @@ int CArcGraph::VerticesCount() const {
 }
 
 void CArcGraph::AddEdge(int from, int to) {
-	edgesCount++;
 	Edge temp(from, to);
 	edgesList.push_back(temp);
 }
